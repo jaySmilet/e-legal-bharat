@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.hover-underline:hover{
+  text-decoration: underline;
+}

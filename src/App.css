@@ -1,8 +1,7 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .logo {
@@ -39,4 +38,25 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.top-info{
+  width: 100%;
+  height: 80vh;
+  background-image: url('./assets/back-trans.jpg');
+  background-size: cover; /* Covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
+  position: relative;
+}
+.profile-man{
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/confident-man.png');
+  background-size: contain; /* Covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repetition */
+  position: absolute;
+  top: 10%;
+  right: -30%;
 }
