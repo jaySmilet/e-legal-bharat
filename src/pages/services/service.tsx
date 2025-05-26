@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Marquee from "../../components/Marquee";
 import { useParams } from "react-router-dom";
 import { Notification1 } from "../../models/models";

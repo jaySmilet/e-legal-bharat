@@ -1,4 +1,3 @@
-import React from "react";
 import Carousels from "../components/carousels";
 import { useNavigate } from "react-router-dom";
 import { ServiceType } from "../models/models";

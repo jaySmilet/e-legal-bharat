@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "../models/models";
 import eLegalBharat from "../assets/e-legal-bharat-logo.png";

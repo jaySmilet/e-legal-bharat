@@ -1,4 +1,3 @@
-import React from "react";
 import "./pricing-card.scss";
 import type { PricingCard } from "../../models/models";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import "./steps.scss";
 export interface StepsProps {
   stepIndex: number;
