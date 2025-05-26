@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Marquee from "../../components/Marquee";
 import { useParams } from "react-router-dom";
-import { Notification1 } from "../../models/models";
+import { Notification1, ServiceType } from "../../models/models";
 import {
   fssaiFAQ,
   fssaiPricing,
@@ -89,7 +89,7 @@ const Service = () => {
         </div>
         <div className="col-md-6 px-md-5 py-md-3 py-4">
           <div className="card shadow-lg bg-body-tertiary rounded">
-            <Contact />
+            <Contact serviceType={ServiceType.FSSAI} />
           </div>
         </div>
       </div>

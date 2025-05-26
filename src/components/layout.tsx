@@ -5,7 +5,7 @@ import Footer from "./footer";
 const Layout = () => {
   return (
     <div className="container-fluid h-100 d-flex flex-column px-0 overflow-x-hidden">
-      <div className="px-5 py-2 bg-dark d-flex align-items-center gap-5 text-light">
+      <div className="px-5 py-2 bg-dark d-flex align-items-center gap-3 gap-md-5 text-light">
         <small className="d-flex align-items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const Layout = () => {
             href="tel:+916388232984"
             className="text-light text-decoration-none"
           >
-            +91-6388232984
+            6388232984
           </a>
         </small>
         <small className="d-flex align-items-center gap-1">
@@ -38,10 +38,10 @@ const Layout = () => {
             />
           </svg>
           <a
-            href="mailto:shubhammaya@gmail.com"
+            href="mailto:elegalbharat@gmail.com"
             className="text-light text-decoration-none"
           >
-            shubhammaya251@gmail.com
+            elegalbharat@gmail.com
           </a>
         </small>
       </div>
