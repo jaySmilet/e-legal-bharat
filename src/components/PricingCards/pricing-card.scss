@@ -1,0 +1,45 @@
+@import "bootstrap/scss/functions"; // Required for maps, math, etc.
+@import "bootstrap/scss/variables"; // Import variables and use them directly
+
+.pricing-card{
+    padding: 1.5em;
+     transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 8px 32px rgba(113, 44, 249, 0.15), 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 2;
+  }
+    .card-top-icon{
+        background: $gray-300;
+    }
+    .trends {
+        color: $orange;
+        border-radius: $border-radius-pill;
+        font-size: 0.8em;
+    }
+    .price-info{
+        color: $gray-600;
+        font-size: 0.8em;
+    }
+    .price-div .price-info{
+        color: $gray-700;
+    }
+    .card-bottom{
+        .features{
+            .price-info{
+                color: $gray-900;
+            }
+            svg {
+                flex-shrink: 0;         /* Prevent icon from shrinking */
+                margin-top: 1px; /* Align icon with text */
+            }
+        }
+    }
+    .line{
+    height: 1px;
+    background-color: $gray-400;
+}
+    
+}

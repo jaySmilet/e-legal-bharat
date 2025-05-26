@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "../models/models";
+import eLegalBharat from "../assets/e-legal-bharat-logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -9,17 +10,23 @@ const Header = () => {
     navigate(`/${path}`);
   };
   const isActive = (path: string) => {
-    return location.pathname === `/${path}`;
+    return location.pathname.includes(path);
   };
 
   return (
     <nav
-      className="navbar fixed-top navbar-expand-lg px-0"
+      className="navbar sticky-top navbar-expand-lg px-0"
       data-bs-theme="dark"
-      style={{ backgroundColor: "#712cf9" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand cursor-pointer">E Legal Bharat</a>
+        <a className="navbar-brand cursor-pointer">
+          <img
+            src={eLegalBharat}
+            className=""
+            style={{ height: "30px", width: "50px" }}
+            alt="..."
+          />
+        </a>
         <button
           className="navbar-toggler"
           type="button"

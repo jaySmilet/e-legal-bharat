@@ -1,0 +1,92 @@
+@import "bootstrap/scss/functions"; // Required for maps, math, etc.
+@import "bootstrap/scss/variables"; // Import variables and use them directly
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2rem;
+  max-height: 300px;
+}
+
+.cutout-box {
+  position: relative;
+  /* background: #639039f2; */
+  background: $blue-500;
+  background: #3353f9b5;
+  background: #434e89;
+  padding: 1rem 1.5rem;
+  padding-left: 5rem; /* space for cutout */
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s, transform 0.3s;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cutout-box:hover {
+  box-shadow: 0 4px 24px rgba(113, 44, 249, 0.15), 0 1.5px 8px rgba(0,0,0,0.08);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Semi-circle cutout (fake it with ::before) */
+.cutout-box::before {
+  content: '';
+  position: absolute;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  background: white; /* match page background */
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Smaller circle positioned under semi-circle */
+.cutout-box::after {
+  content: '';
+  position: absolute;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: #c40d1f; /* color of smaller circle */
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Real circle with dynamic content */
+.step-index {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #c40d1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  transition: background 0.3s, color 0.3s, transform 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+  cursor: pointer;
+}
+.step-index:hover {
+  background: $blue-500;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.2) rotate(-12deg);
+}

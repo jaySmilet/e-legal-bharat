@@ -1,0 +1,10 @@
+.accordion .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.accordion .accordion-button:not(.collapsed),
+.accordion .accordion-button:hover {
+  color: #c40d1f;
+  background-color: rgba(245, 243, 252, 0.5);
+}

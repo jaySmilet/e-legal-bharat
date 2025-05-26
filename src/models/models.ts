@@ -32,3 +32,28 @@ export interface Notification1{
     notificationType:ServiceType;
     isIcon?:boolean;
 }    
+
+export interface UserContact{
+    name: string;
+    email?: string;
+    mobile: string;
+    location: string;
+    businessName: string;
+    message?: string;
+    haveGstNumber?: boolean;
+}
+
+export interface FAQ {
+    index?: number;
+    question: string;
+    answer: string;
+}
+
+export interface PricingCard {
+  title: string;
+  status?: string;
+  desc: string;
+  price: number;
+  billingBy: string;
+  features: string[];
+}
