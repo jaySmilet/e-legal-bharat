@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
 import Marquee from "../../components/Marquee";
 import { useParams } from "react-router-dom";
-import { Notification1, ServiceType } from "../../models/models";
-import {
-  fssaiFAQ,
-  fssaiPricing,
-  fssaiSteps,
-  Notifications,
-} from "../../static/static-data";
+import { Services } from "../../models/models";
+import { ServiceData } from "../../static/static-data";
 import { parseServiceTypeUpperCase } from "../../utils/utils";
 import alert from "../../assets/icons/alert.gif";
 import Contact from "../contact";
-import fsm from "../../assets/fssai-fsm.png";
-import fssai from "../../assets/icons/fssai-logo.webp";
-import { fssaiRegistrationInfo } from "../../static/fssaiRegistrationInfo";
 import Steps from "../../components/Steps/steps";
 import Accordion from "../../components/Accordions/accordion";
 import PricingCard from "../../components/PricingCards/pricing-card";
@@ -21,21 +13,38 @@ import PricingCard from "../../components/PricingCards/pricing-card";
 const Service = () => {
   const params = useParams();
   const { serviceType } = params;
-  const getNotifications = (serviceType: string) => {
-    const notifications: Notification1[] = Notifications.filter(
-      (notification) =>
-        notification.notificationType === parseServiceTypeUpperCase(serviceType)
+  const [serviceData, setServiceData] = useState<Services[]>([]);
+
+  const getServiceData = (serviceType: string) => {
+    const serviceData: Services[] = ServiceData.filter(
+      (sData) => sData.serviceType === parseServiceTypeUpperCase(serviceType)
     );
-    return notifications;
+    return serviceData;
   };
 
-  const [notifications, setNotifications] = useState<Notification1[]>([]);
   useEffect(() => {
-    setNotifications(getNotifications(serviceType as string));
-  }, []);
+    const newData = getServiceData(serviceType as string);
+    setServiceData(newData);
+  }, [serviceType]);
+
+  console.log(serviceData);
+
+  if (!serviceData[0]) {
+    return <div>Loading...</div>;
+  }
+
+  const {
+    notifications,
+    data,
+    serviceType: serviceTypeData,
+    pricings,
+    steps,
+    faqs,
+  } = serviceData[0];
+
   return (
     <div className="service">
-      {notifications.length > 0 ? (
+      {Array.isArray(notifications) && notifications.length > 0 && (
         <div className="d-flex justify-content-center align-items-center bg-yellow-400 text-dark-emphasis p-1">
           <Marquee
             children={notifications.map((notification) => (
@@ -53,148 +62,90 @@ const Service = () => {
             ))}
           />
         </div>
-      ) : (
-        ""
       )}
-      <div className="row py-3 px-5 no-copy">
+      <div className="row px-4 py-5 no-copy">
         <div className="col-md-6 px-md-5 py-md-3 py-4 d-flex justify-content-center align-items-center">
           <div className="d-flex flex-column gap-3">
             <div className="d-flex flex-column gap-1">
-              <h2 className="fs-1 fw-bold">Your FSSAI License, Faster</h2>
-              <h6 className="fs-5 fw-semibold">
-                Need your FSSAI Registration Certificate?
-              </h6>
+              <h2 className="fs-1 fw-bold">{data.main.title}</h2>
+              <h6 className="fs-5 fw-semibold">{data.main.subtitle1}</h6>
             </div>
             <div className="line"></div>
-            <span className="fw-semibold">
-              We make it super easy to apply online through the FOSCOS portal.
-              Just reach out to us, and we’ll help you get it done fast and
-              hassle-free!
-            </span>
+            <span className="fw-semibold">{data.main.subtitle2}</span>
             <div className="row d-flex justify-content-center align-items-center">
               <img
-                src={fsm}
+                src={data.main.images[1].url}
                 className="img-fluid col-md-6"
                 style={{ width: "300px" }}
-                alt="..."
+                alt={data.main.images[1].name}
               />
               <img
-                src={fssai}
+                src={data.main.images[0].url}
                 className="img-fluid col-md-6"
                 style={{ width: "200px" }}
-                alt="..."
+                alt={data.main.images[0].name}
               />
             </div>
           </div>
         </div>
         <div className="col-md-6 px-md-5 py-md-3 py-4">
           <div className="card shadow-lg bg-body-tertiary rounded">
-            <Contact serviceType={ServiceType.FSSAI} />
+            <Contact serviceType={serviceTypeData} />
           </div>
         </div>
       </div>
 
-      <div className="pricing-plans row py-3 px-5 no-copy">
-        <div className="fs-3 fw-bold text-center mb-1">
-          Trusted FSSAI Licensing, Straightforward Pricing
-        </div>
-        {fssaiPricing.map((fsPrice) => (
-          <div className="col-md-4 d-flex align-items-stretch px-md-4 my-md-4 my-3">
-            <PricingCard pricingCard={fsPrice} />
+      <div className="pricing-plans row px-md-5 py-5 px-4 no-copy">
+        <div className="fs-3 fw-bold text-center mb-1">{pricings.title}</div>
+        {pricings.pricingCards[0]?.data.map((pC) => (
+          <div
+            key={pC.title}
+            className="col-md-4 d-flex align-items-stretch px-md-4 my-md-4 mt-md-5 my-3"
+          >
+            <PricingCard pricingCardItem={pC} />
           </div>
         ))}
       </div>
 
-      <div className="row py-3 px-5 no-copy">
-        <div className="col-md-12 px-md-5 my-3">
-          <div className="d-flex flex-column gap-3">
-            <h6 className="fs-4 fw-bold">{fssaiRegistrationInfo.title}</h6>
+      <div className="row p-4 pt-5 no-copy">
+        <div className="col-md-12 px-md-5">
+          <div className="d-flex flex-column gap-2">
+            <h6 className="fs-4 fw-bold mb-0">
+              {data.secondary.overview.title}
+            </h6>
             <div className="line"></div>
-            <span className="fs-6 fw-semibold">
-              {fssaiRegistrationInfo.introduction}
-            </span>
-            <span
+            <div
               className="fs-6 fw-semibold"
               dangerouslySetInnerHTML={{
-                __html: fssaiRegistrationInfo.mandatoryRegistration.description,
+                __html: data.secondary.overview.desc,
               }}
             />
           </div>
-          <div className="d-flex flex-column gap-3 my-5">
-            <div className="d-flex flex-column gap-2">
-              <h6 className="fs-4 fw-bold">
-                {fssaiRegistrationInfo.whatIsFSSAIRegistration.heading}
-              </h6>
-              <span className="fs-6 fw-semibold">
-                {fssaiRegistrationInfo.whatIsFSSAIRegistration.description}
-              </span>
-              <ul className="fs-6 fw-semibold">
-                {fssaiRegistrationInfo.whatIsFSSAIRegistration.eligibleBusinesses.map(
-                  (business, index) => (
-                    <li key={index}>{business}</li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            <div className="d-flex flex-column gap-2">
-              <h6 className="fs-4 fw-bold">
-                {fssaiRegistrationInfo.keyPoints.heading}
-              </h6>
-              <ul className="fs-6 fw-semibold">
-                {fssaiRegistrationInfo.keyPoints.points.map((point, index) => (
-                  <li key={index}>
-                    <span className="fw-bold">{point.title}:</span>{" "}
-                    {point.detail}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="d-flex flex-column gap-2">
-              <h6 className="fs-4 fw-bold">
-                {fssaiRegistrationInfo.importance.heading}
-              </h6>
-              <span className="fs-6 fw-semibold">
-                {fssaiRegistrationInfo.importance.description}
-              </span>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="row py-3 px-5 no-copy">
+      <div className="row py-3 px-4 no-copy">
         {" "}
         <div className="col-md-12 px-md-5 px-3">
-          <h6 className="fs-4 fw-bold">Steps to Get FSSAI Registration</h6>
+          <h6 className="fs-4 fw-bold">{steps.title}</h6>
           <div className="line"></div>
-          <span className="fs-6 fw-semibold">
-            Follow these simple steps to get your FSSAI registration done
-            quickly and easily.
-          </span>
+          <span className="fs-6 fw-semibold">{steps.subtitle}</span>
         </div>
-        {fssaiSteps.map((step) => (
-          <div className="col-md-6">
-            <Steps
-              key={step.stepIndex}
-              stepIndex={step.stepIndex}
-              title={step.title}
-              description={step.description}
-            />
+        {steps.step[0]?.data.map((step) => (
+          <div key={step.stepIndex} className="col-md-6 px-md-0 p-4">
+            <Steps stepData={step} />
           </div>
         ))}
       </div>
 
-      <div className="row py-3 px-5 no-copy">
+      <div className="row py-3 px-4 no-copy">
         <div className="col-md-12 px-md-5 p-3">
-          <h6 className="fs-4 fw-bold">Frequently Asked Questions (FAQs)</h6>
+          <h6 className="fs-4 fw-bold">{faqs.title}</h6>
           <div className="line"></div>
-          <span className="fs-6 fw-semibold">
-            Here are some common questions about FSSAI registration:
-          </span>
+          <span className="fs-6 fw-semibold">{faqs.subtitle}</span>
         </div>
         <div className="col-md-12 px-md-5 p-3">
-          <Accordion faq={fssaiFAQ} />
+          <Accordion faq={faqs.faq} />
         </div>
       </div>
     </div>

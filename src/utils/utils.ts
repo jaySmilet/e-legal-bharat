@@ -1,4 +1,5 @@
-import { ServiceType } from "../models/models";
+import { BASE_IMAGE_SERVICE_FALLACK_PATH, BASE_IMAGE_SERVICE_PATH } from "../constants";
+import { ServiceImage, ServiceType } from "../models/models";
 
 const parseServiceTypeLowerCase = (serviceType: ServiceType):string => {
     return serviceType.toLowerCase().replace(/\s+/g, "-");
@@ -8,7 +9,7 @@ const parseServiceTypeUpperCase = (serviceType: string):ServiceType => {
     return serviceType.toUpperCase().replace(/-/g, " ") as ServiceType;
 }
 
-export const getServiceContactTxt = (serviceType: ServiceType): string => {
+const getServiceContactTxt = (serviceType: ServiceType): string => {
     switch (serviceType) {
         case ServiceType.UDYAM:
             return "Contact us for Udyam Registration";
@@ -37,6 +38,18 @@ export const getServiceContactTxt = (serviceType: ServiceType): string => {
     }
 }
 
+/**
+ * Gets an array of service images from the public/assets folder.
+ * Only includes images that exist (optional).
+ */
+const getServiceImages = (serviceType: ServiceType, imageNames: string[]): ServiceImage[] => {
+   return imageNames.map((filename) => ({
+    name: filename.split(".")[0], //name without extension
+    url: `${BASE_IMAGE_SERVICE_PATH}${parseServiceTypeLowerCase(serviceType)}/${filename}`,
+    fallBackUrl: `${BASE_IMAGE_SERVICE_FALLACK_PATH}${filename}` // If the constant is misspelled, fix it to BASE_IMAGE_SERVICE_FALLBACK_PATH
+   }));
+}
+
 // The above code defines two utility functions for parsing service types.
-export { parseServiceTypeLowerCase, parseServiceTypeUpperCase };
+export { parseServiceTypeLowerCase, parseServiceTypeUpperCase, getServiceContactTxt, getServiceImages };
 // The above code defines two utility functions for parsing service types.

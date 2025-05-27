@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <div className="mt-auto bg-dark px-4 py-3 text-center">
       <span className="text-light">
-        All rights reserved &copy; <b>E-Legal Bharat</b> 2025
+        &copy; Copyright <b>E-Legal Bharat</b> 2025, All Rights Reserved
       </span>
     </div>
   );

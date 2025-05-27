@@ -1,93 +1,13 @@
-import { StepsProps } from "../components/Steps/steps";
-import { FAQ, Notification1, Services, ServiceType, UserContact } from "../models/models";
+import { FAQ, Notification1, Services, ServiceType, STEP, UserContact } from "../models/models";
 import { PricingCard } from "../models/models";
+import { getServiceImages, parseServiceTypeLowerCase } from "../utils/utils";
+import { htmlContent } from "./html-content";
 
-export const ServiceData:Services[] = [
+export const ALL_FAQ:FAQ[] = [
     {
-        id: 1,
-        title: "Udyam Registration",
-        description: "Udyam Registration is a government initiative to promote small and medium enterprises (SMEs) in India. It provides various benefits such as access to credit, subsidies, and government schemes.",
-        serviceType: ServiceType.UDYAM,
-    },
-    {
-        id:2,
-        title: "FSSAI Registration",
-        description: "FSSAI Registration is mandatory for food businesses in India. It ensures that food products are safe and meet quality standards. The registration process involves obtaining a license from the Food Safety and Standards Authority of India (FSSAI).",
-        serviceType: ServiceType.FSSAI,
-    },
-    {
-        id:3,
-        title: "GST Registration",
-        description: "GST Registration is required for businesses in India that have a turnover above a certain threshold. It allows businesses to collect and pay Goods and Services Tax (GST) on their sales and purchases.",
-        serviceType: ServiceType.GST,},
-    {
-        id:4,
-        title: "ITR Filing",
-        description: "ITR Filing is the process of submitting income tax returns to the Income Tax Department in India. It is mandatory for individuals and businesses with taxable income. The filing process involves reporting income, deductions, and tax liabilities.",
-        serviceType: ServiceType.ITR,}
-]
-
-export const Notifications:Notification1[] = [
-    {
-        id: 1,
-        notificationType: ServiceType.FSSAI,
-        notificationMsg: "Attention : Running a Food Business Without a License Can Lead to Rs. 5 Lakh Fine & 6 Months in Jail!",
-        isIcon: true,
-    },
-    {
-        id: 2,
-        notificationType: ServiceType.FSSAI,
-        notificationMsg: "Stay compliant and protect your business—get your food license today!",
-    },
-]
-
-export const initialUserContact:UserContact = {
-          name: "",
-          mobile: "",
-          location: "",
-          businessName: "",
-          message: "",
-          haveGstNumber: false,
-        }
-export const fssaiSteps:StepsProps[] = [
-    {
-        stepIndex: 1,
-        title: "Submit Basic Details",
-        description: "Fill out our simple online form with your name, business type, and contact information.",
-    },
-    {
-        stepIndex: 2,
-        title: "Upload Documents",
-        description: `Upload clear copies of:
-<ul> 
-<li>Aadhaar and PAN card</li>
-<li>Passport-size photo</li>
-<li>Proof of business address (like electricity bill or rent agreement)</li>
-</ul>`   },
-    {
-        stepIndex: 3,
-        title: "We Prepare Your Application",
-        description: "Our team will accurately fill out your FSSAI application on your behalf.",
-    },
-    {
-        stepIndex: 4,
-        title: "Online Payment",
-        description: "Pay the registration fee securely online (includes govt. + service charges).",
-    },
-    {
-        stepIndex: 5,
-        title: "Application Submission",
-        description: "We submit your application to FSSAI and share the tracking details.",
-    },
-    {
-        stepIndex: 6,
-        title: "Get Your FSSAI Certificate",
-        description: "Once approved, receive your FSSAI Registration Certificate and ID Card by email/WhatsApp. You’re now legally ready to start!",
-    },
-]
-
-export const fssaiFAQ:FAQ[] = [
-    {
+        serviceType:ServiceType.FSSAI,
+        data:[
+            {
         index: 1,
         question: "Who needs FSSAI registration?",
         answer: "All food business operators (FBOs) including manufacturers, transporters, distributors, retailers, and food stall vendors must obtain FSSAI registration/license."
@@ -168,10 +88,83 @@ export const fssaiFAQ:FAQ[] = [
         question: "Can I make changes to my existing FSSAI license?",
         answer: "Yes, you can apply for modification through the FoSCoS portal."
     }
+        ]
+    }
 ] 
 
-export const fssaiPricing:PricingCard[] = [
+export const Notifications:Notification1[] = [
     {
+        id: 1,
+        notificationType: ServiceType.FSSAI,
+        notificationMsg: "Attention : Running a Food Business Without a License Can Lead to Rs. 5 Lakh Fine & 6 Months in Jail!",
+        isIcon: true,
+    },
+    {
+        id: 2,
+        notificationType: ServiceType.FSSAI,
+        notificationMsg: "Stay compliant and protect your business—get your food license today!",
+    },
+]
+
+export const serviceImageMap: Record<string, string[]> = {
+  "udyam-registration": [
+    "certificate-1.png",
+    "logo.webp",
+    "process.jpg"
+  ],
+  "fssai-registration": [
+    "fssai-logo.webp",
+    "fssai-fsm.png"
+  ]
+};
+
+export const ALL_Steps:STEP[] = [
+    {
+        serviceType: ServiceType.FSSAI,
+        data: [
+            {
+        stepIndex: 1,
+        title: "Submit Basic Details",
+        description: "Fill out our simple online form with your name, business type, and contact information.",
+    },
+    {
+        stepIndex: 2,
+        title: "Upload Documents",
+        description: `Upload clear copies of:
+<ul> 
+<li>Aadhaar and PAN card</li>
+<li>Passport-size photo</li>
+<li>Proof of business address (like electricity bill or rent agreement)</li>
+</ul>`   },
+    {
+        stepIndex: 3,
+        title: "We Prepare Your Application",
+        description: "Our team will accurately fill out your FSSAI application on your behalf.",
+    },
+    {
+        stepIndex: 4,
+        title: "Online Payment",
+        description: "Pay the registration fee securely online (includes govt. + service charges).",
+    },
+    {
+        stepIndex: 5,
+        title: "Application Submission",
+        description: "We submit your application to FSSAI and share the tracking details.",
+    },
+    {
+        stepIndex: 6,
+        title: "Get Your FSSAI Certificate",
+        description: "Once approved, receive your FSSAI Registration Certificate and ID Card by email/WhatsApp. You’re now legally ready to start!",
+    },
+        ]
+    }
+]
+
+export const ALL_Pricing:PricingCard[] = [
+    {
+        serviceType:ServiceType.FSSAI,
+        data:[
+              {
         title:"Basic Registration",
         status:"Trending",
         desc:"Small food businesses, home-based bakers, petty food vendors",
@@ -238,4 +231,71 @@ export const fssaiPricing:PricingCard[] = [
             "Swift application filing",
         ]
     },
+        ]
+    }
 ]
+
+// Make sure getServiceImages is defined or imported before this usage
+export const ServiceData:Services[] = [
+    // {
+    //     id: 1,
+    //     serviceType: ServiceType.UDYAM,
+    //     data: {
+    //         title: "Udyam Registration",
+    //     }
+    // },
+    {
+        id:2,
+        serviceType: ServiceType.FSSAI,
+        data:{
+            main:{
+            title: "Your FSSAI License, Faster",
+            subtitle1:"Need your FSSAI Registration Certificate?",
+            subtitle2:"We make it super easy to apply online through the FOSCOS portal. Just reach out to us, and we’ll help you get it done fast and hassle-free!",
+            images:getServiceImages(ServiceType.FSSAI, serviceImageMap[parseServiceTypeLowerCase(ServiceType.FSSAI)]),
+        },
+        secondary:{
+            overview: {
+                title:"FSSAI Registration for Food Businesses (FBOs) – A Quick Overview",
+                desc:htmlContent.filter(content=>content.serviceType===ServiceType.FSSAI)[0].content,
+                
+            }
+        }
+        },
+        pricings:{
+            title: "Trusted FSSAI Licensing, Straightforward Pricing",
+            pricingCards: ALL_Pricing.filter(pricing=>pricing.serviceType===ServiceType.FSSAI),
+        },
+        notifications: Notifications.filter((notification) => notification.notificationType === ServiceType.FSSAI),
+        steps:{
+            title:"Steps to Get FSSAI Registration",
+            subtitle:" Follow these simple steps to get your FSSAI registration done quickly and easily.",
+            step:ALL_Steps.filter(steps=>steps.serviceType===ServiceType.FSSAI)
+        },
+        faqs:{
+            title:"Steps to Get FSSAI Registration",
+            subtitle:" Follow these simple steps to get your FSSAI registration done quickly and easily.",
+            faq:ALL_FAQ.filter(faqdata=>faqdata.serviceType===ServiceType.FSSAI)
+        }
+    },
+    // {
+    //     id:3,
+    //     title: "GST Registration",
+    //     description: "GST Registration is required for businesses in India that have a turnover above a certain threshold. It allows businesses to collect and pay Goods and Services Tax (GST) on their sales and purchases.",
+    //     serviceType: ServiceType.GST,},
+    // {
+    //     id:4,
+    //     title: "ITR Filing",
+    //     description: "ITR Filing is the process of submitting income tax returns to the Income Tax Department in India. It is mandatory for individuals and businesses with taxable income. The filing process involves reporting income, deductions, and tax liabilities.",
+    //     serviceType: ServiceType.ITR,}
+]
+
+export const initialUserContact:UserContact = {
+          name: "",
+          mobile: "",
+          location: "",
+          businessName: "",
+          message: "",
+          haveGstNumber: false,
+        }
+
