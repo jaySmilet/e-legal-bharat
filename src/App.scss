@@ -87,6 +87,26 @@
 .navbar {
   background-color: $blue-500;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .navbar-toggler{
+    &:focus{
+      box-shadow: none;
+    }
+    &:hover{
+      .navbar-toggler-icon{
+        opacity: 0.8;
+     }
+    } 
+}
+}
+.offcanvas {
+  &.offcanvas-end{
+    .offcanvas-header .btn-close {
+      &:focus{
+      box-shadow: none;
+    }
+    }
+  }
 }
 
 .pricing-plans{

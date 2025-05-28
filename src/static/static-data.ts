@@ -129,7 +129,11 @@ export const Notifications: Notification1[] = [
 
 export const serviceImageMap: Record<string, string[]> = {
   "udyam-registration": ["certificate-1.png", "logo.webp", "process.jpg"],
-  "fssai-registration": ["fssai-fsm.png", "fssai-logo.webp"],
+  "fssai-registration": [
+    "fssai-fsm.png",
+    "fssai-logo.webp",
+    "fssai-certificate.webp",
+  ],
 };
 
 export const ALL_Steps: STEP[] = [

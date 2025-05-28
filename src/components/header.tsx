@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "../models/models";
 import eLegalBharat from "../assets/e-legal-bharat-logo.png";
+import { BASE_IMAGE_PATH } from "../constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,75 +21,102 @@ const Header = () => {
       <div className="container-fluid">
         <a className="navbar-brand cursor-pointer">
           <img
-            src={eLegalBharat}
-            className=""
-            style={{ height: "30px", width: "50px" }}
-            alt="..."
+            src={`${BASE_IMAGE_PATH}e-legal-bharat.png`}
+            className="me-2"
+            style={{ width: "155px" }}
+            alt="e-legal-bharat-logo"
           />
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse ms-5" id="navbarTogglerDemo02">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li
-              className="nav-item"
-              onClick={() => handleClick(RoutePath.HOME)}
-            >
-              <a
-                className={`nav-link cursor-pointer ${
-                  isActive(RoutePath.HOME) ? "active" : ""
-                }`}
-                aria-current="page"
+        <div
+          className="offcanvas offcanvas-end w-50 bg-dark ms-5"
+          tabIndex={-1}
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              <img
+                src={`${BASE_IMAGE_PATH}e-legal-bharat-green.png`}
+                className="me-2"
+                style={{ width: "155px" }}
+                alt="e-legal-bharat-logo"
+              />
+            </h5>
+            <button
+              type="button"
+              className="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+              <li
+                className="nav-item"
+                onClick={() => handleClick(RoutePath.HOME)}
+                data-bs-dismiss="offcanvas"
               >
-                Home
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => handleClick(RoutePath.ABOUT)}
-            >
-              <a
-                className={`nav-link cursor-pointer ${
-                  isActive(RoutePath.ABOUT) ? "active" : ""
-                }`}
+                <a
+                  className={`nav-link cursor-pointer ${
+                    isActive(RoutePath.HOME) ? "active" : ""
+                  }`}
+                  aria-current="page"
+                >
+                  Home
+                </a>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleClick(RoutePath.ABOUT)}
+                data-bs-dismiss="offcanvas"
               >
-                About
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => handleClick(RoutePath.SERVICES)}
-            >
-              <a
-                className={`nav-link cursor-pointer ${
-                  isActive(RoutePath.SERVICES) ? "active" : ""
-                }`}
+                <a
+                  className={`nav-link cursor-pointer ${
+                    isActive(RoutePath.ABOUT) ? "active" : ""
+                  }`}
+                >
+                  About
+                </a>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleClick(RoutePath.SERVICES)}
+                data-bs-dismiss="offcanvas"
               >
-                Services
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => handleClick(RoutePath.CONTACT)}
-            >
-              <a
-                className={`nav-link cursor-pointer ${
-                  isActive(RoutePath.CONTACT) ? "active" : ""
-                }`}
+                <a
+                  className={`nav-link cursor-pointer ${
+                    isActive(RoutePath.SERVICES) ? "active" : ""
+                  }`}
+                >
+                  Services
+                </a>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleClick(RoutePath.CONTACT)}
+                data-bs-dismiss="offcanvas"
               >
-                Contact
-              </a>
-            </li>
-          </ul>
+                <a
+                  className={`nav-link cursor-pointer ${
+                    isActive(RoutePath.CONTACT) ? "active" : ""
+                  }`}
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
