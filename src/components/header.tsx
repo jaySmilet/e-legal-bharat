@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "../models/models";
-import eLegalBharat from "../assets/e-legal-bharat-logo.png";
 import { BASE_IMAGE_PATH } from "../constants";
 
 const Header = () => {
