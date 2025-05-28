@@ -9,6 +9,7 @@ import Contact from "../contact";
 import Steps from "../../components/Steps/steps";
 import Accordion from "../../components/Accordions/accordion";
 import PricingCard from "../../components/PricingCards/pricing-card";
+import Spinners from "../../components/Spinners/spinners";
 
 const Service = () => {
   const params = useParams();
@@ -30,7 +31,11 @@ const Service = () => {
   console.log(serviceData);
 
   if (!serviceData[0]) {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center py-5">
+        <Spinners />
+      </div>
+    );
   }
 
   const {
@@ -63,7 +68,7 @@ const Service = () => {
           />
         </div>
       )}
-      <div className="row px-4 py-5 no-copy">
+      <div className="row p-4 no-copy">
         <div className="col-md-6 px-md-5 py-md-3 py-4 d-flex justify-content-center align-items-center">
           <div className="d-flex flex-column gap-3">
             <div className="d-flex flex-column gap-1">
@@ -74,16 +79,16 @@ const Service = () => {
             <span className="fw-semibold">{data.main.subtitle2}</span>
             <div className="row d-flex justify-content-center align-items-center">
               <img
-                src={data.main.images[1].url}
-                className="img-fluid col-md-6"
-                style={{ width: "300px" }}
-                alt={data.main.images[1].name}
-              />
-              <img
                 src={data.main.images[0].url}
                 className="img-fluid col-md-6"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
                 alt={data.main.images[0].name}
+              />
+              <img
+                src={data.main.images[1].url}
+                className="img-fluid col-md-6"
+                style={{ width: "200px" }}
+                alt={data.main.images[1].name}
               />
             </div>
           </div>
@@ -96,11 +101,11 @@ const Service = () => {
       </div>
 
       <div className="pricing-plans row px-md-5 py-5 px-4 no-copy">
-        <div className="fs-3 fw-bold text-center mb-1">{pricings.title}</div>
-        {pricings.pricingCards[0]?.data.map((pC) => (
+        <div className="fs-3 fw-bold text-center mb-4">{pricings.title}</div>
+        {pricings.data.map((pC) => (
           <div
             key={pC.title}
-            className="col-md-4 d-flex align-items-stretch px-md-4 my-md-4 mt-md-5 my-3"
+            className="col-12 col-sm-6 col-md-4 d-flex align-items-stretch px-2 my-3"
           >
             <PricingCard pricingCardItem={pC} />
           </div>
@@ -131,21 +136,21 @@ const Service = () => {
           <div className="line"></div>
           <span className="fs-6 fw-semibold">{steps.subtitle}</span>
         </div>
-        {steps.step[0]?.data.map((step) => (
-          <div key={step.stepIndex} className="col-md-6 px-md-0 p-4">
+        {steps.data.map((step) => (
+          <div key={step.stepIndex} className="col-md-6 px-md-0 px-4">
             <Steps stepData={step} />
           </div>
         ))}
       </div>
 
-      <div className="row py-3 px-4 no-copy">
+      <div className="row pb-3 px-4 no-copy">
         <div className="col-md-12 px-md-5 p-3">
           <h6 className="fs-4 fw-bold">{faqs.title}</h6>
           <div className="line"></div>
           <span className="fs-6 fw-semibold">{faqs.subtitle}</span>
         </div>
         <div className="col-md-12 px-md-5 p-3">
-          <Accordion faq={faqs.faq} />
+          <Accordion faq={faqs.data} />
         </div>
       </div>
     </div>

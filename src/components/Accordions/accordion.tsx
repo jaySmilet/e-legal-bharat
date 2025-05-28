@@ -1,14 +1,14 @@
-import { FAQ, FaqItem } from "../../models/models";
+import { FaqItem } from "../../models/models";
 import "./accordion.scss";
 
 interface AccordionProps {
-  faq: FAQ[];
+  faq: FaqItem[];
 }
 
 const Accordion = ({ faq }: AccordionProps) => {
   return (
     <div className="accordion" id="accordionExample">
-      {faq[0].data.map((item: FaqItem) => (
+      {faq.map((item: FaqItem) => (
         <div className="accordion-item" key={item.question}>
           <h2 className="accordion-header">
             <button

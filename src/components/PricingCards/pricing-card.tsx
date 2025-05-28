@@ -7,7 +7,7 @@ interface PricingCardProps {
 
 const PricingCard = ({ pricingCardItem }: PricingCardProps) => {
   return (
-    <div className="pricing-card card h-100 d-flex flex-column gap-2 shadow-lg bg-body-tertiary rounded">
+    <div className="pricing-card card w-100 h-100 d-flex flex-column gap-2 shadow-lg bg-body-tertiary rounded">
       <div className="card-top d-flex flex-column gap-2">
         <div className="card-top-icon wh28 d-flex justify-content-center align-items-center p-1 rounded-circle">
           <svg
@@ -30,7 +30,7 @@ const PricingCard = ({ pricingCardItem }: PricingCardProps) => {
             </g>
           </svg>
         </div>
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-3 flex-wrap">
           <span className="h4 m-0 fw-semibold">{pricingCardItem.title}</span>
           {pricingCardItem.status && (
             <div className="trends d-flex align-items-center gap-1 py-1 px-2 bg-warning bg-opacity-10">
@@ -100,7 +100,7 @@ const PricingCard = ({ pricingCardItem }: PricingCardProps) => {
         </div>
       </div>
       <div className="line"></div>
-      <div className="card-bottom d-flex flex-column gap-3">
+      <div className="card-bottom d-flex flex-column gap-3 mb-3">
         <small className="price-info fw-semibold lh-sm text-muted">
           What's included
         </small>

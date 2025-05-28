@@ -13,18 +13,20 @@ const Home = () => {
       <div className="top-info">
         <div className="container d-flex align-items-center h-100 px-0">
           <div className="row">
-            <div className="col-9 z-1">
-              <div className="d-flex flex-column gap-3">
-                <span className=" text-light fs-1 fw-bold">
-                  Welcome to E-Legal Bharat
-                </span>
-                <span className="text-light fs-3 fw-normal mt-2">
-                  Registration to Compliance —We’ve Got You Covered!
-                </span>
-                <div className="d-flex justify-content-between mt-2">
+            <div className="col-10 z-1">
+              <div className="d-flex flex-column gap-md-4 gap-5 ps-4">
+                <div className="d-flex flex-column gap-2">
+                  <span className="text-light fs-1 fw-semibold">
+                    Welcome to E-Legal Bharat
+                  </span>
+                  <span className="text-light fs-4 fw-normal mt-2">
+                    Registration to Compliance —We’ve Got You Covered!
+                  </span>
+                </div>
+                <div className="d-flex flex-column flex-md-row gap-md-5 gap-2">
                   <div className="d-flex flex-column gap-2">
                     <span
-                      className="d-flex align-items-center gap-2 fs-6 fw-bold text-light cursor-pointer hover-underline"
+                      className="d-flex align-items-center gap-2 text-light cursor-pointer hover-underline"
                       onClick={() => handleClick(ServiceType.FSSAI)}
                     >
                       <svg
@@ -45,7 +47,7 @@ const Home = () => {
                       FSSAI Registration
                     </span>
                     <span
-                      className="d-flex align-items-center gap-2 fs-6 fw-bold text-light  cursor-pointer hover-underline"
+                      className="d-flex align-items-center gap-2 text-light  cursor-pointer hover-underline"
                       onClick={() => handleClick(ServiceType.UDYAM)}
                     >
                       <svg
@@ -68,7 +70,7 @@ const Home = () => {
                   </div>
                   <div className="d-flex flex-column gap-2">
                     <span
-                      className="d-flex align-items-center gap-2 fs-6 fw-bold text-light cursor-pointer hover-underline"
+                      className="d-flex align-items-center gap-2 text-light cursor-pointer hover-underline"
                       onClick={() => handleClick(ServiceType.GST)}
                     >
                       <svg
@@ -93,7 +95,7 @@ const Home = () => {
                       GST Registration
                     </span>
                     <span
-                      className="d-flex align-items-center gap-2 fs-6 fw-bold text-light cursor-pointer hover-underline"
+                      className="d-flex align-items-center gap-2 text-light cursor-pointer hover-underline"
                       onClick={() => handleClick(ServiceType.ITR)}
                     >
                       <svg
@@ -113,7 +115,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-2">
               <div className="profile-man z-0"></div>
             </div>
           </div>

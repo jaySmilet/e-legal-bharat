@@ -1,14 +1,14 @@
 export interface Services {
-    id: number;
-    serviceType: ServiceType;
-    data: {
+  id: number;
+  serviceType: ServiceType;
+  data: {
     main: ServiceMainData;
     secondary: ServiceSecondaryData;
   };
-    pricings: ServicePricing;
-    notifications?: Notification1[];
-    steps: StepData;
-    faqs:FaqData
+  pricings: PricingCard;
+  notifications?: Notification1[];
+  steps: STEP;
+  faqs: FAQ;
 }
 
 export interface OverviewSection {
@@ -34,41 +34,43 @@ export type ServiceImage = {
 };
 
 export enum ServiceType {
-    UDYAM = "UDYAM REGISTRATION",
-    FSSAI = "FSSAI REGISTRATION",
-    GST = "GST REGISTRATION",
-    ITR = "ITR FILLING",
-    MSME = "MSME REGISTRATION",
-    TRADEMARK = "TRADEMARK REGISTRATION",
-    ISO = "ISO CERTIFICATION",
-    IEC = "IEC REGISTRATION",
-    TAN = "TAN REGISTRATION",
-    DIN = "DIN REGISTRATION",
-    LLP = "LLP REGISTRATION",}
+  UDYAM = "UDYAM REGISTRATION",
+  FSSAI = "FSSAI REGISTRATION",
+  GST = "GST REGISTRATION",
+  ITR = "ITR FILLING",
+  MSME = "MSME REGISTRATION",
+  TRADEMARK = "TRADEMARK REGISTRATION",
+  ISO = "ISO CERTIFICATION",
+  IEC = "IEC REGISTRATION",
+  TAN = "TAN REGISTRATION",
+  DIN = "DIN REGISTRATION",
+  LLP = "LLP REGISTRATION",
+}
 
 export enum RoutePath {
-    HOME = "home",     
-    ABOUT = "about", 
-    SERVICES = "services",
-    CONTACT = "contact",
-    SERVICE = "/services/:serviceType",
-    NOT_FOUND = "*",}
+  HOME = "home",
+  ABOUT = "about",
+  SERVICES = "services",
+  CONTACT = "contact",
+  SERVICE = "/services/:serviceType",
+  NOT_FOUND = "*",
+}
 
-export interface Notification1{
-    id: number;
-    notificationMsg:string;
-    notificationType:ServiceType;
-    isIcon?:boolean;
-}    
+export interface Notification1 {
+  id: number;
+  notificationMsg: string;
+  serviceType: ServiceType;
+  isIcon?: boolean;
+}
 
-export interface UserContact{
-    name: string;
-    email?: string;
-    mobile: string;
-    location: string;
-    businessName: string;
-    message?: string;
-    haveGstNumber?: boolean;
+export interface UserContact {
+  name: string;
+  email?: string;
+  mobile: string;
+  location: string;
+  businessName: string;
+  message?: string;
+  haveGstNumber?: boolean;
 }
 
 export type PricingCardItem = {
@@ -78,48 +80,36 @@ export type PricingCardItem = {
   price: number;
   billingBy: string;
   features: string[];
-}
+};
 
 export interface PricingCard {
- data:PricingCardItem[],
- serviceType:ServiceType
-}
-
-type ServicePricing = {
+  data: PricingCardItem[];
+  serviceType: ServiceType;
   title: string;
-  pricingCards: PricingCard[];
 }
 
-export type StepItem  = {
+export type StepItem = {
   stepIndex: number;
   title: string;
   description: string;
-}
+};
 
 export interface STEP {
-   data:StepItem[]
-   serviceType:ServiceType
-}
-
-type StepData = {
-    title:string;
-    subtitle:string;
-    step:STEP[]
+  data: StepItem[];
+  serviceType: ServiceType;
+  title: string;
+  subtitle: string;
 }
 
 export type FaqItem = {
-    index?: number;
-    question: string;
-    answer: string;
-} 
+  index?: number;
+  question: string;
+  answer: string;
+};
 
 export interface FAQ {
-    data:FaqItem[]
-    serviceType:ServiceType
-}
-
-type FaqData = {
-    title:string;
-    subtitle:string;
-    faq:FAQ[]
+  data: FaqItem[];
+  serviceType: ServiceType;
+  title: string;
+  subtitle: string;
 }

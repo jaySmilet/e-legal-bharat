@@ -2,10 +2,14 @@
 @import "bootstrap/scss/variables"; // Import variables and use them directly
 
 .pricing-card{
+  min-width: 0; // Prevent overflow
+  min-height: 400px; // Adjust as needed for your design
+  max-width: 100%;   // Prevent overflow on small screens
+  box-sizing: border-box;
     padding: 1.5em;
      transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
-  will-change: transform, box-shadow;
-
+     will-change: transform, box-shadow;
+     
   &:hover {
     transform: translateY(-10px) scale(1.01);
     box-shadow: 0 8px 32px rgba(113, 44, 249, 0.15), 0 2px 8px rgba(0,0,0,0.10);
@@ -42,4 +46,10 @@
     background-color: $gray-400;
 }
     
+}
+
+@media (max-width: 575.98px) {
+  .pricing-card {
+    min-height: 320px; // Smaller min-height for mobile
+  }
 }
