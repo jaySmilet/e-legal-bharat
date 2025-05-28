@@ -10,6 +10,7 @@ import Steps from "../../components/Steps/steps";
 import Accordion from "../../components/Accordions/accordion";
 import PricingCard from "../../components/PricingCards/pricing-card";
 import Spinners from "../../components/Spinners/spinners";
+import ImageViewer from "../../components/ImageViewer/ImageViewer";
 
 const Service = () => {
   const params = useParams();
@@ -48,7 +49,7 @@ const Service = () => {
   } = serviceData[0];
 
   return (
-    <div className="service">
+    <div className="service no-copy">
       {Array.isArray(notifications) && notifications.length > 0 && (
         <div className="d-flex justify-content-center align-items-center bg-yellow-400 text-dark-emphasis p-1">
           <Marquee
@@ -68,7 +69,7 @@ const Service = () => {
           />
         </div>
       )}
-      <div className="row p-4 no-copy">
+      <div className="row p-4">
         <div className="col-md-6 px-md-5 py-md-3 py-4 d-flex justify-content-center align-items-center">
           <div className="d-flex flex-column gap-3">
             <div className="d-flex flex-column gap-1">
@@ -100,7 +101,7 @@ const Service = () => {
         </div>
       </div>
 
-      <div className="pricing-plans row px-md-5 py-5 px-4 no-copy">
+      <div className="pricing-plans bg-gray-200 row px-md-5 py-5 px-4">
         <div className="fs-3 fw-bold text-center mb-4">{pricings.title}</div>
         {pricings.data.map((pC) => (
           <div
@@ -112,7 +113,7 @@ const Service = () => {
         ))}
       </div>
 
-      <div className="row p-4 pt-5 no-copy">
+      <div className="row p-4 pt-5">
         <div className="col-md-12 px-md-5">
           <div className="d-flex flex-column gap-2">
             <h6 className="fs-4 fw-bold mb-0">
@@ -129,7 +130,7 @@ const Service = () => {
         </div>
       </div>
 
-      <div className="row py-3 px-4 no-copy">
+      <div className="row py-3 px-4">
         {" "}
         <div className="col-md-12 px-md-5 px-3">
           <h6 className="fs-4 fw-bold">{steps.title}</h6>
@@ -143,7 +144,15 @@ const Service = () => {
         ))}
       </div>
 
-      <div className="row pb-3 px-4 no-copy">
+      <div className="d-flex flex-column gap-4 align-items-center justify-content-center bg-gray-200 p-4">
+        <span className="fs-4 fw-semibold">Sample Certificate</span>
+        <ImageViewer
+          src={data.main.images[2].url}
+          alt={data.main.images[2].name}
+        />
+      </div>
+
+      <div className="row p-4">
         <div className="col-md-12 px-md-5 p-3">
           <h6 className="fs-4 fw-bold">{faqs.title}</h6>
           <div className="line"></div>
