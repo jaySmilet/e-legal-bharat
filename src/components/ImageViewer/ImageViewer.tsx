@@ -3,9 +3,14 @@ import React, { useRef, useState } from "react";
 interface ImageViewerProps {
   src: string;
   alt?: string;
+  fallback?: string;
 }
 
-const ImageViewer = ({ src, alt = "fssai-certificate" }: ImageViewerProps) => {
+const ImageViewer = ({
+  src,
+  alt = "fssai-certificate",
+  fallback,
+}: ImageViewerProps) => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const [zoom, setZoom] = useState(1);
 
@@ -32,6 +37,9 @@ const ImageViewer = ({ src, alt = "fssai-certificate" }: ImageViewerProps) => {
         <img
           src={src}
           alt={alt}
+          onError={(e) => {
+            e.currentTarget.src = `${fallback}`;
+          }}
           style={{
             transform: `scale(${zoom})`,
             transition: "transform 0.3s ease",

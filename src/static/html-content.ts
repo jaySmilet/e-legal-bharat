@@ -53,4 +53,69 @@ export const htmlContent = [
                       </div>
             `,
   },
+  {
+    serviceType: ServiceType.UDYAM,
+    content: `  <ul class="fs-6 fw-semibold">
+                              <li>
+                                Fast Processing within 1-2 working days
+                              </li>
+                              <li>
+                                Expert assistance with application & documents
+                              </li>
+                              <li>
+                               Affordable pricing with no hidden charges
+                              </li>
+                              <li>
+                               Official Udyam Certificate delivered to your email
+                              </li>
+                          </ul>
+                          
+                            <div class="d-flex flex-column gap-2">
+                            <h6 class="fs-4 fw-bold">
+                              Benefits:
+                            </h6>
+                          <ul class="fs-6 fw-semibold">
+                              <li>
+                                Official Government Recognition for your business
+                              </li>
+                              <li>
+                                Access to collateral-free loans under credit guarantee schemes
+                              </li>
+                              <li>
+                                Subsidies on patents and ISO certifications
+                              </li>
+                              <li>
+                                Protection against delayed payments from buyers
+                              </li>
+                              <li>
+                                Eligibility for government tenders reserved for MSMEs
+                              </li>
+                              <li>
+                                Reduced fees for trademark and patent registrations
+                              </li>
+                          </ul>
+                        </div>
+
+                            <div class="d-flex flex-column gap-2">
+                            <h6 class="fs-4 fw-bold">
+                              Who Can Apply?
+                            </h6>
+                          <ul class="fs-6 fw-semibold">
+                              <li>
+                                Manufacturers, Traders & Service Providers
+                              </li>
+                              <li>
+                                Startups & Freelancers
+                              </li>
+                              <li>
+                                Sole Proprietorships & Partnerships
+                              </li>
+                              <li>
+                                LLPs, Pvt Ltd, and OPCs
+                              </li>
+                          </ul>
+                        </div>
+
+                          `,
+  },
 ];

@@ -84,12 +84,18 @@ const Service = () => {
                 className="img-fluid col-md-6"
                 style={{ width: "300px" }}
                 alt={data.main.images[0].name}
+                onError={(e) => {
+                  e.currentTarget.src = `${data.main.images[0].fallBackUrl}`;
+                }}
               />
               <img
                 src={data.main.images[1].url}
                 className="img-fluid col-md-6"
                 style={{ width: "200px" }}
                 alt={data.main.images[1].name}
+                onError={(e) => {
+                  e.currentTarget.src = `${data.main.images[0].fallBackUrl}`;
+                }}
               />
             </div>
           </div>
@@ -149,6 +155,7 @@ const Service = () => {
         <ImageViewer
           src={data.main.images[2].url}
           alt={data.main.images[2].name}
+          fallback={data.main.images[2].fallBackUrl}
         />
       </div>
 

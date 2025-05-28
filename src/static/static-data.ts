@@ -109,6 +109,29 @@ export const ALL_FAQ: FAQ[] = [
       },
     ],
   },
+  {
+    title: "Frequently Asked Questions (FAQs)",
+    subtitle: "Here are some common questions about Udyam registration:",
+    serviceType: ServiceType.UDYAM,
+    data: [
+      {
+        index: 1,
+        question: "Is Udyam registration mandatory?",
+        answer:
+          "Yes, it is mandatory for businesses to register as MSMEs to avail government benefits.",
+      },
+      {
+        index: 2,
+        question: "How long does it take to receive the certificate?",
+        answer: "Typically within 1-2 working days after submission.",
+      },
+      {
+        index: 3,
+        question: "Is GST mandatory for Udyam registration?",
+        answer: "Only if your business is required to be registered under GST.",
+      },
+    ],
+  },
 ];
 
 export const Notifications: Notification1[] = [
@@ -128,12 +151,13 @@ export const Notifications: Notification1[] = [
 ];
 
 export const serviceImageMap: Record<string, string[]> = {
-  "udyam-registration": ["certificate-1.png", "logo.webp", "process.jpg"],
+  "udyam-registration": ["udyam.png", "msme.png", "process.jpg"],
   "fssai-registration": [
     "fssai-fsm.png",
     "fssai-logo.webp",
     "fssai-certificate.webp",
   ],
+  default: ["no-image.webp"],
 };
 
 export const ALL_Steps: STEP[] = [
@@ -182,6 +206,55 @@ export const ALL_Steps: STEP[] = [
         title: "Get Your FSSAI Certificate",
         description:
           "Once approved, receive your FSSAI Registration Certificate and ID Card by email/WhatsApp. You’re now legally ready to start!",
+      },
+    ],
+  },
+  {
+    title: "Steps to Get Udyam Or MSME Registration",
+    subtitle:
+      "Follow these simple steps to get your Udyam Or MSME registration done quickly and easily.",
+    serviceType: ServiceType.UDYAM,
+    data: [
+      {
+        stepIndex: 1,
+        title: "Submit your basic details and document",
+        description:
+          "Fill out our simple online form with your name, business type, and contact information.",
+      },
+      {
+        stepIndex: 2,
+        title: "Upload Documents",
+        description: `Upload clear copies of:
+<ul> 
+<li>Aadhaar and PAN card</li>
+<li>Passport-size photo</li>
+<li>Bank Account Details with Passbook first page photocopy that clearly mention Account No., IFS Code & Name with a latest valid photgraph</li>
+<li>Proof of business address (like electricity bill or rent agreement)</li>
+</ul>`,
+      },
+      {
+        stepIndex: 3,
+        title: "We Prepare Your Application",
+        description:
+          "Our team will accurately fill out your MSME application on your behalf.",
+      },
+      {
+        stepIndex: 4,
+        title: "Online Payment",
+        description:
+          "Pay the registration fee securely online (includes govt. + service charges).",
+      },
+      {
+        stepIndex: 5,
+        title: "Application Submission",
+        description:
+          "We submit your application to Udyam and share the tracking details.",
+      },
+      {
+        stepIndex: 6,
+        title: "Get Your Udyam Certificate",
+        description:
+          "Once approved, receive your Udyam Registration Certificate and ID Card by email/WhatsApp. You’re now legally ready to start!",
       },
     ],
   },
@@ -261,17 +334,58 @@ export const ALL_Pricing: PricingCard[] = [
       },
     ],
   },
+  {
+    title: "Get Your Udyam Certificate Now",
+    serviceType: ServiceType.UDYAM,
+    data: [
+      {
+        title: "Basic Registration",
+        status: "Trending",
+        desc: "All business from a small shop to entrprise organization",
+        price: 599,
+        billingBy: "Billed on request",
+        features: [
+          "Includes consultation, application filing, and certificate delivery",
+        ],
+      },
+    ],
+  },
 ];
 
 // Make sure getServiceImages is defined or imported before this usage
 export const ServiceData: Services[] = [
-  // {
-  //     id: 1,
-  //     serviceType: ServiceType.UDYAM,
-  //     data: {
-  //         title: "Udyam Registration",
-  //     }
-  // },
+  {
+    id: 1,
+    serviceType: ServiceType.UDYAM,
+    data: {
+      main: {
+        title: "Udyam Registration (MSME Certificate)",
+        subtitle1: "Start Your Udyam Registration",
+        subtitle2:
+          "Get your MSME certificate quickly and easily with our expert help!",
+        images: getServiceImages(
+          ServiceType.UDYAM,
+          serviceImageMap[parseServiceTypeLowerCase(ServiceType.UDYAM)]
+        ),
+      },
+      secondary: {
+        overview: {
+          title: "Why Choose Us?",
+          desc: htmlContent.filter(
+            (content) => content.serviceType === ServiceType.UDYAM
+          )[0].content,
+        },
+      },
+    },
+    pricings: ALL_Pricing.filter(
+      (pricing) => pricing.serviceType === ServiceType.UDYAM
+    )[0],
+    notifications: [],
+    steps: ALL_Steps.filter(
+      (steps) => steps.serviceType === ServiceType.UDYAM
+    )[0],
+    faqs: ALL_FAQ.filter((faq) => faq.serviceType === ServiceType.UDYAM)[0],
+  },
   {
     id: 2,
     serviceType: ServiceType.FSSAI,
