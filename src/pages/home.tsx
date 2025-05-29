@@ -15,7 +15,7 @@ const Home = () => {
         <div className="overlay"></div>
         <div className="container d-flex align-items-center h-100 px-0">
           <div className="row">
-            <div className="col-10 z-1">
+            <div className="col-10 z-1 p-0">
               <div className="d-flex flex-column gap-md-4 gap-5 ps-4">
                 <div className="d-flex flex-column gap-2">
                   <span className="text-light fs-1 fw-semibold">
