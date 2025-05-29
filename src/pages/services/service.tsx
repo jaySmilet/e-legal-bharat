@@ -72,11 +72,10 @@ const Service = () => {
       <div className="row p-4">
         <div className="col-md-6 px-md-5 py-md-3 py-4 d-flex justify-content-center align-items-center">
           <div className="d-flex flex-column gap-3">
-            <div className="d-flex flex-column gap-1">
+            <div className="d-flex flex-column gap-1 bb-red-4 mb-0">
               <h2 className="fs-1 fw-bold">{data.main.title}</h2>
               <h6 className="fs-5 fw-semibold">{data.main.subtitle1}</h6>
             </div>
-            <div className="line"></div>
             <span className="fw-semibold">{data.main.subtitle2}</span>
             <div className="row d-flex justify-content-center align-items-center">
               <img
@@ -122,10 +121,9 @@ const Service = () => {
       <div className="row p-4 pt-5">
         <div className="col-md-12 px-md-5">
           <div className="d-flex flex-column gap-2">
-            <h6 className="fs-4 fw-bold mb-0">
+            <h6 className="fs-4 fw-bold mb-0 bb-red-4">
               {data.secondary.overview.title}
             </h6>
-            <div className="line"></div>
             <div
               className="fs-6 fw-semibold"
               dangerouslySetInnerHTML={{
@@ -139,8 +137,7 @@ const Service = () => {
       <div className="row py-3 px-4">
         {" "}
         <div className="col-md-12 px-md-5 px-3">
-          <h6 className="fs-4 fw-bold">{steps.title}</h6>
-          <div className="line"></div>
+          <h6 className="fs-4 fw-bold bb-red-4">{steps.title}</h6>
           <span className="fs-6 fw-semibold">{steps.subtitle}</span>
         </div>
         {steps.data.map((step) => (
@@ -161,8 +158,7 @@ const Service = () => {
 
       <div className="row p-4">
         <div className="col-md-12 px-md-5 p-3">
-          <h6 className="fs-4 fw-bold">{faqs.title}</h6>
-          <div className="line"></div>
+          <h6 className="fs-4 fw-bold bb-red-4">{faqs.title}</h6>
           <span className="fs-6 fw-semibold">{faqs.subtitle}</span>
         </div>
         <div className="col-md-12 px-md-5 p-3">

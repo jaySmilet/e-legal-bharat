@@ -1,7 +1,8 @@
-import Carousels from "../components/carousels";
 import { useNavigate } from "react-router-dom";
 import { ServiceType } from "../models/models";
 import { parseServiceTypeLowerCase } from "../utils/utils";
+import { rightChoiceHome, serviceHome } from "../static/static-data";
+import { BASE_IMAGE_PATH } from "../constants";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <div className="home d-flex flex-column">
       <div className="top-info">
+        <div className="overlay"></div>
         <div className="container d-flex align-items-center h-100 px-0">
           <div className="row">
             <div className="col-10 z-1">
@@ -38,9 +40,9 @@ const Home = () => {
                         <path
                           fill="none"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M15 21H6a3 3 0 0 1-3-3v-1h10v2a2 2 0 0 0 4 0V5a2 2 0 1 1 2 2h-2m2-4H8a3 3 0 0 0-3 3v11M9 7h4m-4 4h4"
                         />
                       </svg>
@@ -82,9 +84,9 @@ const Home = () => {
                         <g
                           fill="none"
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
                           color="currentColor"
                         >
                           <path d="M2 8.57c0-1.197.482-1.93 1.48-2.486l4.11-2.287C9.743 2.6 10.82 2 12 2s2.257.6 4.41 1.797l4.11 2.287C21.517 6.64 22 7.373 22 8.57c0 .324 0 .487-.035.62c-.186.7-.821.811-1.434.811H3.469c-.613 0-1.247-.11-1.434-.811C2 9.056 2 8.893 2 8.569M4 10v8.5M8 10v8.5m3 0H5a3 3 0 0 0-3 3a.5.5 0 0 0 .5.5H11m10.5-7.5l-7 7" />
@@ -121,7 +123,69 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Carousels />
+      {/* <Carousels /> */}
+
+      <div className="service-grid-section p-5">
+        <span className="fs-3 fw-bold bb-red-4">Our Services</span>
+        <div className="service-grid mt-5">
+          {serviceHome.map((sH) => (
+            <div
+              key={sH.id}
+              className="home-service-card card shadow p-4 w-100 h-100 d-flex flex-column"
+            >
+              <div className="d-flex flex-column gap-4 flex-grow-1">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src={`${BASE_IMAGE_PATH}icons/${sH.icon}`}
+                    alt={sH.title}
+                    width={32}
+                    height={32}
+                  />
+                  <span className="fs-5 fw-bold">{sH.title}</span>
+                </div>
+                <span className="fs-normal">{sH.desc}</span>
+                <div className="d-grid gap-2 col-6 mx-auto mt-auto">
+                  <button
+                    className="btn btn-outline-dark"
+                    onClick={() =>
+                      sH.serviceType && handleClick(sH.serviceType)
+                    }
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="service-grid-section bg-gray-200 p-5">
+        <span className="fs-3 fw-bold bb-red-4">
+          Why We're the Right Choice
+        </span>
+        <div className="service-grid mt-5">
+          {rightChoiceHome.map((rcH) => (
+            <div
+              key={rcH.id}
+              className="home-service-card card-rc card shadow p-4 w-100  h-100 d-flex flex-column cursor-pointer"
+            >
+              <div className="d-flex flex-column gap-4 flex-grow-1">
+                <div className="d-flex align-items-center gap-2">
+                  <img
+                    src={`${BASE_IMAGE_PATH}icons/${rcH.icon}`}
+                    alt={rcH.title}
+                    width={32}
+                    height={32}
+                  />
+                  <span className="title-rc fs-5 fw-bold">{rcH.title}</span>
+                </div>
+                <span className="fs-normal">{rcH.desc}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

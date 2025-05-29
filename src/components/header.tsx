@@ -14,13 +14,16 @@ const Header = () => {
 
   return (
     <nav
-      className="navbar sticky-top navbar-expand-lg px-0"
+      className="navbar sticky-top navbar-expand-lg bg-black px-0"
       data-bs-theme="dark"
     >
       <div className="container-fluid">
-        <a className="navbar-brand cursor-pointer">
+        <a
+          className="navbar-brand cursor-pointer"
+          onClick={() => handleClick(RoutePath.HOME)}
+        >
           <img
-            src={`${BASE_IMAGE_PATH}e-legal-bharat.png`}
+            src={`${BASE_IMAGE_PATH}logo/e-legal-bharat-green.png`}
             className="me-2"
             style={{ width: "155px" }}
             alt="e-legal-bharat-logo"
@@ -38,15 +41,19 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="offcanvas offcanvas-end w-50 bg-dark ms-5"
+          className="offcanvas offcanvas-end w-50 bg-black ms-5"
           tabIndex={-1}
           id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+            <h5
+              className="offcanvas-title"
+              id="offcanvasDarkNavbarLabel"
+              onClick={() => handleClick(RoutePath.HOME)}
+            >
               <img
-                src={`${BASE_IMAGE_PATH}e-legal-bharat-green.png`}
+                src={`${BASE_IMAGE_PATH}logo/e-legal-bharat-green.png`}
                 className="me-2"
                 style={{ width: "155px" }}
                 alt="e-legal-bharat-logo"

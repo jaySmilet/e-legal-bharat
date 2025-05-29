@@ -12,9 +12,7 @@
 .cutout-box {
   position: relative;
   /* background: #639039f2; */
-  background: $blue-500;
-  background: #3353f9b5;
-  background: #434e89;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   padding: 1rem 1.5rem;
   padding-left: 5rem; /* space for cutout */
   border-radius: 0.5rem;
@@ -86,7 +84,7 @@
   cursor: pointer;
 }
 .step-index:hover {
-  background: $blue-500;
+  background: $green-500;
   color: #fff;
   transform: translate(-50%, -50%) scale(1.2) rotate(-12deg);
 }

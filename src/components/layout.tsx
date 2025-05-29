@@ -4,9 +4,9 @@ import Footer from "./footer";
 
 const Layout = () => {
   return (
-    <div className="container-fluid h-100 d-flex flex-column px-0 overflow-x-hidden">
-      <div className="px-md-5 py-2 bg-dark d-flex align-items-center justify-content-around justify-content-md-start gap-md-5 text-light">
-        <small className="d-flex align-items-center gap-1">
+    <div className="container-fluid h-100 d-flex flex-column px-0 overflow-x-hidden no-copy">
+      <div className="connnect-section px-md-5 py-2 bg-white d-flex align-items-center justify-content-around justify-content-md-start gap-md-5 text-light">
+        <small className="d-flex align-items-center gap-1 text-secondary-emphasis">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -20,12 +20,12 @@ const Layout = () => {
           </svg>
           <a
             href="tel:+916388232984"
-            className="text-light text-decoration-none"
+            className="text-secondary-emphasis text-decoration-none fw-semibold"
           >
             +91-6388232984
           </a>
         </small>
-        <small className="d-flex align-items-center gap-1">
+        <small className="d-flex align-items-center gap-1 text-secondary-emphasis">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -39,7 +39,7 @@ const Layout = () => {
           </svg>
           <a
             href="mailto:elegalbharat@gmail.com"
-            className="text-light text-decoration-none"
+            className="text-secondary-emphasis text-decoration-none fw-semibold"
           >
             elegalbharat@gmail.com
           </a>

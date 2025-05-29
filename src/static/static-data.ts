@@ -1,5 +1,6 @@
 import {
   FAQ,
+  HomeContent,
   Notification1,
   Services,
   ServiceType,
@@ -441,3 +442,100 @@ export const initialUserContact: UserContact = {
   message: "",
   haveGstNumber: false,
 };
+
+export const serviceHome: HomeContent[] = [
+  {
+    id: 1,
+    serviceType: ServiceType.UDYAM,
+    title: "Udyam/MSME Registration",
+    desc: "Get your business recognized under MSME and unlock benefits like subsidies, tax rebates, and easier bank loans.",
+    icon: "udyam-certificate.svg",
+  },
+  {
+    id: 2,
+    serviceType: ServiceType.FSSAI,
+    title: "FSSAI Registration",
+    desc: "Mandatory for all food businesses. Ensure legal compliance and build customer trust with an FSSAI license.",
+    icon: "fssai-certificate.svg",
+  },
+  {
+    id: 3,
+    serviceType: ServiceType.GST,
+    title: "GST Registration",
+    desc: "Easily register for GST and start issuing GST-compliant invoices for your business.",
+    icon: "gst.svg",
+  },
+  {
+    id: 4,
+    serviceType: ServiceType.ITR,
+    title: "ITR Filing",
+    desc: "File your Income Tax Return accurately and on time with expert support—stress-free and reliable.",
+    icon: "tax.svg",
+  },
+  {
+    id: 5,
+    serviceType: ServiceType.TRADEMARK,
+    title: "Trademark Registration",
+    desc: "Secure your brand identity and protect it from misuse with our seamless trademark registration service.",
+    icon: "trademark.svg",
+  },
+  {
+    id: 6,
+    serviceType: ServiceType.ISO,
+    title: "ISO Certification",
+    desc: "Boost your credibility with ISO certification—an international standard that validates your business quality.",
+    icon: "iso-outline.svg",
+  },
+  {
+    id: 7,
+    serviceType: ServiceType.LLP,
+    title: "LLP Registration",
+    desc: "Start your Limited Liability Partnership easily with our end-to-end LLP registration service.",
+    icon: "partnership.svg",
+  },
+];
+
+export const rightChoiceHome: HomeContent[] = [
+  {
+    id: 1,
+    title: "Fast & Hassle-Free Process",
+    desc: "We handle the complex legal paperwork so you don’t have to. Just submit your details and we’ll take care of the rest—quickly and smoothly.",
+    icon: "rocket.svg",
+  },
+  {
+    id: 2,
+    title: "Expert Guidance at Every Step",
+    desc: "Our team of legal and compliance experts ensures your application is accurate, complete, and compliant with all government norms.",
+    icon: "guide.svg",
+  },
+  {
+    id: 3,
+    title: "Transparent Pricing",
+    desc: "No hidden fees, no last-minute charges. You pay what you see—simple and clear pricing for every service.",
+    icon: "rupee-circle-solid.svg",
+  },
+  {
+    id: 4,
+    title: "Secure & Confidential",
+    desc: "Your documents and data are 100% safe with us. We follow strict privacy practices to ensure your information is never compromised.",
+    icon: "trust.svg",
+  },
+  {
+    id: 5,
+    title: "Trusted by Hundreds of Entrepreneurs",
+    desc: "From startups to small business owners, our customers vouch for our reliability and ease of service",
+    icon: "guide.svg",
+  },
+  {
+    id: 6,
+    title: "End-to-End Support",
+    desc: "From form filling to certificate delivery, we stay with you throughout the entire journey—and even after, if needed.",
+    icon: "customer-support.svg",
+  },
+  {
+    id: 7,
+    title: "User-Friendly Experience",
+    desc: "Our platform is built to be intuitive so anyone can apply for licenses without confusion or technical jargon.",
+    icon: "friend.svg",
+  },
+];

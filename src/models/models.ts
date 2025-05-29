@@ -113,3 +113,11 @@ export interface FAQ {
   title: string;
   subtitle: string;
 }
+
+export interface HomeContent {
+  id: number;
+  serviceType?: ServiceType;
+  title: string;
+  desc: string;
+  icon: string;
+}
