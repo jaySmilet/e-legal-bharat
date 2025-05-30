@@ -1,5 +1,3 @@
-import React from "react";
-
 const Connect = () => {
   return (
     <div className="connnect-section px-md-5 py-2 bg-white d-flex align-items-center justify-content-around justify-content-md-start gap-md-5 text-light">
