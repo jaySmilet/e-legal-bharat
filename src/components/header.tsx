@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
     <nav
-      className="navbar sticky-top navbar-expand-lg bg-black px-0"
+      className="navbar sticky-top navbar-expand-lg bg-black px-5"
       data-bs-theme="dark"
     >
-      <div className="container-fluid">
+      <div className="container-fluid px-0">
         <a
           className="navbar-brand cursor-pointer"
           onClick={() => handleClick(RoutePath.HOME)}

@@ -11,11 +11,13 @@ import Accordion from "../../components/Accordions/accordion";
 import PricingCard from "../../components/PricingCards/pricing-card";
 import Spinners from "../../components/Spinners/spinners";
 import ImageViewer from "../../components/ImageViewer/ImageViewer";
+import NotFound from "../not-found";
 
 const Service = () => {
   const params = useParams();
   const { serviceType } = params;
   const [serviceData, setServiceData] = useState<Services[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const getServiceData = (serviceType: string) => {
     const serviceData: Services[] = ServiceData.filter(
@@ -25,16 +27,24 @@ const Service = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     const newData = getServiceData(serviceType as string);
     setServiceData(newData);
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
   }, [serviceType]);
 
   console.log(serviceData);
 
+  if (loading) {
+    return <Spinners />;
+  }
+
   if (!serviceData[0]) {
     return (
       <div className="d-flex justify-content-center py-5">
-        <Spinners />
+        <NotFound text="Service Currently Unavailabe / Related Content will be updated soon" />
       </div>
     );
   }
@@ -49,9 +59,9 @@ const Service = () => {
   } = serviceData[0];
 
   return (
-    <div className="service no-copy">
+    <div className="service">
       {Array.isArray(notifications) && notifications.length > 0 && (
-        <div className="d-flex justify-content-center align-items-center bg-yellow-400 text-dark-emphasis p-1">
+        <div className="d-flex justify-content-center align-items-center bg-yellow-400 text-dark-emphasis py-1">
           <Marquee
             children={notifications.map((notification) => (
               <span key={notification.id} className="fs-normal fw-medium me-5">
@@ -100,7 +110,7 @@ const Service = () => {
           </div>
         </div>
         <div className="col-md-6 px-md-5 py-md-3 py-4">
-          <div className="card shadow-lg bg-body-tertiary rounded">
+          <div className="card shadow-lg bg-body-tertiary rounded p-5">
             <Contact serviceType={serviceTypeData} />
           </div>
         </div>
@@ -140,11 +150,7 @@ const Service = () => {
           <h6 className="fs-4 fw-bold bb-red-4">{steps.title}</h6>
           <span className="fs-6 fw-semibold">{steps.subtitle}</span>
         </div>
-        {steps.data.map((step) => (
-          <div key={step.stepIndex} className="col-md-6 px-md-0 px-4">
-            <Steps stepData={step} />
-          </div>
-        ))}
+        <Steps stepData={steps.data} />
       </div>
 
       <div className="d-flex flex-column gap-4 align-items-center justify-content-center bg-gray-200 p-4">

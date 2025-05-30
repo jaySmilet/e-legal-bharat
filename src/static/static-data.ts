@@ -133,6 +133,145 @@ export const ALL_FAQ: FAQ[] = [
       },
     ],
   },
+  {
+    title: "Frequently Asked Questions (FAQs) – GST Registration",
+    subtitle: "Here are some common questions about GST Registration:",
+    serviceType: ServiceType.GST,
+    data: [
+      {
+        index: 1,
+        question: "What is GST Registration and who should apply?",
+        answer:
+          "GST Registration is mandatory for businesses with annual turnover above ₹40 lakhs (₹20 lakhs for services). It is also required for online sellers, exporters, and inter-state suppliers. Anyone who wants to legally collect tax and claim input tax credit must register under GST. ",
+      },
+      {
+        index: 2,
+        question: "Can an individual or freelancer apply for GST registration?",
+        answer:
+          "Yes! Even if you're a freelancer, consultant, or self-employed service provider, you can apply for GST Registration and issue GST-compliant invoices to clients. ",
+      },
+      {
+        index: 3,
+        question: "What documents are required for GST Registration?",
+        answer: `Common documents include:
+        <ul>
+        <li>PAN Card of business owner</li>
+        <li>Aadhaar Card</li>
+        <li>Passport size photo</li>
+        <li>Address proof of business (electricity bill, rent agreement, NOC, etc.)</li>
+        <li>Bank account details or cancelled cheque</li>
+        </ul>
+        Our team will guide you through exactly what’s needed based on your business type.
+        `,
+      },
+      {
+        index: 4,
+        question: "How long does it take to get GST registration?",
+        answer:
+          "Typically, it takes 3–5 working days if all documents are valid and no queries are raised by the GST officer. Our team ensures the fastest possible turnaround.",
+      },
+      {
+        index: 5,
+        question:
+          "Will you help if there's any clarification raised by the GST department?",
+        answer:
+          "Absolutely. If the GST officer requests clarification or document resubmission, our experts will handle the entire response on your behalf without extra charge (in Standard and Premium Plans).",
+      },
+      {
+        index: 6,
+        question: "Can I use the same GSTIN for multiple businesses?",
+        answer:
+          "No, GSTIN is issued per business entity and per state. If you operate different businesses or branches in different states, you’ll need separate GST registrations.",
+      },
+      {
+        index: 7,
+        question:
+          "Will I receive the GST certificate in physical or digital format?",
+        answer:
+          "The GST Certificate is issued digitally by the government. We will email and WhatsApp you the certificate as a PDF document as soon as it’s approved.",
+      },
+      {
+        index: 8,
+        question:
+          "Why should I register through your platform instead of doing it myself?",
+        answer: `GST registration can involve technicalities like HSN/SAC codes, tax scheme selection, and officer clarifications. Our team ensures
+        <ul>
+        <li>Error-free filing</li>
+        <li>Quick approval</li>
+        <li>End-to-end support</li>
+        <li>No need to deal with government portals yourself</li>
+        `,
+      },
+      {
+        index: 9,
+        question: " Do I need to file GST returns after registration?",
+        answer:
+          "Yes, once you're registered, you must file GST returns regularly (monthly or quarterly) based on your business. We also provide GST return filing services at affordable rates.",
+      },
+      {
+        index: 10,
+        question: "What if I don’t register under GST when I’m supposed to?",
+        answer:
+          "Operating without GST registration when it's mandatory can lead to penalties, fines, and your business being marked non-compliant by authorities. It's best to get registered early with our help.",
+      },
+    ],
+  },
+  {
+    title: "Frequently Asked Questions (FAQs)",
+    subtitle:
+      "Here are some common questions about ITR (Income Tax Return) filing:",
+    serviceType: ServiceType.ITR,
+    data: [
+      {
+        index: 1,
+        question: "Who is required to file an Income Tax Return (ITR)?",
+        answer:
+          "Any individual whose annual income exceeds the basic exemption limit (₹2.5 lakhs for individuals below 60 years) is required to file an ITR. Additionally, those with foreign assets, claiming tax refunds, or fulfilling other conditions must also file.",
+      },
+      {
+        index: 2,
+        question: "What are the different types of ITR forms?",
+        answer:
+          "There are several types, like ITR-1 (Sahaj) for salaried individuals, ITR-2 for individuals with capital gains, ITR-3 for business/profession income, ITR-4 (Sugam) for presumptive income, and more depending on income type and source.",
+      },
+      {
+        index: 3,
+        question: "What is the due date for filing ITR?",
+        answer:
+          "The due date for individuals (non-audit cases) is typically July 31st of the assessment year. For businesses requiring audit, it’s usually October 31st. Deadlines may vary each year.",
+      },
+      {
+        index: 4,
+        question: "Can I file ITR after the due date?",
+        answer:
+          "Yes, you can file a belated return by December 31st of the assessment year. However, late filing may attract penalties and loss of certain benefits like carry forward of losses.",
+      },
+      {
+        index: 5,
+        question: "What documents are needed to file ITR?",
+        answer:
+          "Common documents include PAN, Aadhaar, Form 16, salary slips, bank statements, investment proofs, home loan interest certificates, and capital gains details (if applicable).",
+      },
+      {
+        index: 6,
+        question: "Do I need to visit the Income Tax Office to file ITR?",
+        answer:
+          "No, the entire process is online. You can file your ITR through our platform. Our experts will assist you in e-filing your return from the comfort of your home.",
+      },
+      {
+        index: 7,
+        question: "What happens if I don’t file ITR?",
+        answer:
+          "Non-filing of ITR can lead to penalties under section 234F, notices from the Income Tax Department, and legal action in severe cases. Filing ITR on time also helps with loan approvals and visa applications.",
+      },
+      {
+        index: 8,
+        question: "Can I revise my ITR after filing?",
+        answer:
+          "Yes, if you’ve made a mistake, you can revise your return before December 31st of the relevant assessment year or before the completion of assessment, whichever is earlier.",
+      },
+    ],
+  },
 ];
 
 export const Notifications: Notification1[] = [
@@ -158,6 +297,8 @@ export const serviceImageMap: Record<string, string[]> = {
     "fssai-logo.webp",
     "fssai-certificate.webp",
   ],
+  "gst-registration": ["gst1.png", "gst2.png", "gst.jpg"],
+  "itr-filing": ["itr.jpg", "itr2.png", "itr1.png"],
   default: ["no-image.webp"],
 };
 
@@ -259,6 +400,129 @@ export const ALL_Steps: STEP[] = [
       },
     ],
   },
+  {
+    title: "Our GST Registration Process – Step-by-Step",
+    subtitle:
+      " We take care of the legal work, so you don’t have to. Here’s how our expert team helps you get GST registered quickly and correctly.",
+    serviceType: ServiceType.GST,
+    data: [
+      {
+        stepIndex: 1,
+        title: "Submit Basic Details",
+        description: `
+<ul> 
+<li>You share your basic business and personal details—like name, PAN, business type, and contact number.</li>
+<li>You can submit through our website, WhatsApp, email, or even talk to our support team directly.</li>
+</ul>`,
+      },
+      {
+        stepIndex: 2,
+        title: "Document Collection & Verification",
+        description: `
+<ul> 
+<li>Our team will guide you through the required documents based on your business type (Proprietorship, Partnership, LLP, or Company).</li>
+<li>You can easily upload the scanned documents to our portal or send them via email.</li>
+<li>We verify all documents to ensure they’re valid, complete, and compliant.</li>
+</ul>`,
+      },
+      {
+        stepIndex: 3,
+        title: "Online Payment",
+        description:
+          "Pay the registration fee securely online (includes govt. + service charges).",
+      },
+      {
+        stepIndex: 4,
+        title: "Application Preparation by Experts",
+        description: `
+<ul> 
+<li>Once verified, our professionals prepare your GST registration application on the official GST portal</li>
+<li>We use accurate business codes (HSN/SAC), correct jurisdiction, and fill all technical sections as per GST rules. </li>
+<li>You don’t need to worry about technical terms or form errors—<b>we handle it all.</b> </li>
+</ul>`,
+      },
+      {
+        stepIndex: 5,
+        title: "Submission & ARN Generation",
+        description: `
+<ul> 
+<li>After filing the application, we generate an<b>Acknowledgement Reference Number (ARN)</b>for your tracking.</li>
+<li>If needed, we help you complete <b>OTP or e-sign verification</b> as per GST requirements.</li>
+</ul>`,
+      },
+      {
+        stepIndex: 6,
+        title: "Follow-up & Clarification (If Needed)",
+        description: `
+<ul> 
+<li>In some cases, the GST officer may raise a <b>query or clarification request.</b></li>
+<li>Our team will <b>promptly respond</b> on your behalf and handle any required explanations or document resubmissions.</li>
+</ul>`,
+      },
+      {
+        stepIndex: 7,
+        title: "GSTIN Issued & Certificate Delivered",
+        description: `
+<ul> 
+<li>Upon approval, you receive your <b>GSTIN (Goods and Services Tax Identification Number)</b> via email and WhatsApp.</li>
+<li>We also send you the official <b>v</b> and help you understand how to use it for invoicing and compliance.</li>
+</ul>`,
+      },
+      {
+        stepIndex: 8,
+        title: "Post-Registration Support (Optional)",
+        description: `
+<ul> 
+<li>We offer ongoing help for <b>GGST Return Filing, GST Invoicing, and Updates</b> like address changes or cancellations.</li>
+<li>Our team stays connected in case you need help after registration.</li>
+</ul>`,
+      },
+    ],
+  },
+  {
+    title: "Step-by-Step ITR Filing Process",
+    subtitle:
+      "All applications go through our in-house expert team to ensure accuracy and compliance.",
+    serviceType: ServiceType.ITR,
+    data: [
+      {
+        stepIndex: 1,
+        title: "Share Your Income Details",
+        description:
+          "Upload your salary slips, Form 16, bank statements, and any other relevant financial documents via our secure portal or WhatsApp.",
+      },
+      {
+        stepIndex: 2,
+        title: "Expert Tax Review",
+        description:
+          "Our team of tax professionals will review your documents, calculate your total income, eligible deductions, and applicable taxes.",
+      },
+      {
+        stepIndex: 3,
+        title: "Tax Computation & Return Preparation",
+        description:
+          "We prepare the return under the appropriate ITR form (ITR-1 to ITR-7) based on your income sources, including salaries, house property, business, or capital gains.",
+      },
+      {
+        stepIndex: 4,
+        title: "Client Review",
+        description:
+          "We’ll share the prepared ITR draft for your review. You can ask questions or request edits before submission.",
+      },
+      {
+        stepIndex: 5,
+        title: "Filing with the Income Tax Department",
+        description:
+          "Once approved, we e-file your return directly with the Income Tax Department and share the acknowledgment (ITR-V) with you.",
+      },
+      {
+        stepIndex: 6,
+        title: "Post-Filing Support",
+        description:
+          "If there are any issues like notices or refunds, our team will assist you at no extra charge.",
+      },
+    ],
+  },
 ];
 
 export const ALL_Pricing: PricingCard[] = [
@@ -351,6 +615,135 @@ export const ALL_Pricing: PricingCard[] = [
       },
     ],
   },
+  {
+    title: "Transparent & Affordable GST Registration Plans",
+    serviceType: ServiceType.GST,
+    data: [
+      {
+        title: "Basic Plan",
+        status: "Trending",
+        desc: "Freelancers, small traders, local businesses.For businesses with turnover < ₹20 lakhs",
+        price: 599,
+        billingBy: "Billed on request",
+        features: [
+          "GST Registration by Experts",
+          "GST Certificate Delivery (PDF)",
+          "Basic Compliance Guidance",
+          "100% Online Process",
+          "Support via WhatsApp/Call",
+        ],
+      },
+      {
+        title: "Standard Plan",
+        status: "Populor",
+        desc: "New startups, service providers, e-commerce sellers.For businesses with turnover > ₹20 lakhs",
+        price: 999,
+        billingBy: "Billed on request",
+        features: [
+          "Dedicated Expert Assistance",
+          "Help with selecting the right tax scheme (Regular vs Composition)",
+          "PAN & Aadhaar linking support",
+          "Clarification handling (if GST officer raises any query)",
+          "Priority Processing (2–3 Working Days)",
+          "Certificate Explanation & Post-Approval Tips",
+        ],
+      },
+      {
+        title: "Premium Plan",
+        desc: "Growing businesses, companies, and LLPs",
+        price: 1499,
+        billingBy: "Monthly Billed on request",
+        features: [
+          "Customized GST Guidance based on business model",
+          "GST Invoice Format & Template",
+          "Post-Registration Support for First GST Return",
+          "Free Consultation on Input Tax Credit",
+          "Optional Add-on Discounts (GST Return Filing, Bookkeeping)",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Pricing Plans for ITR Filing",
+    serviceType: ServiceType.ITR,
+    data: [
+      {
+        title: "Basic Plan",
+        status: "Trending",
+        desc: "For salaried individuals with single Form-16",
+        price: 599,
+        billingBy: "Billed on request",
+        features: [
+          "Filing by Tax Expert",
+          "Document Check & Filing",
+          "Filing Acknowledgment (ITR-V)",
+          "Email & WhatsApp Support",
+        ],
+      },
+      {
+        title: "Standard Plan",
+        status: "Populor",
+        desc: "For salaried/freelancers with multiple incomes",
+        price: 999,
+        billingBy: "Billed on request",
+        features: [
+          "Includes everything in Basic",
+          "Freelance Income & Interest Income",
+          "Claim deductions (80C, 80D, etc.)",
+          "Faster Processing",
+          "Dedicated Filing Manager",
+        ],
+      },
+      {
+        title: "Business Plan",
+        desc: "Freelancers, consultants, small businesses",
+        price: 1499,
+        billingBy: "Billed on request",
+        features: [
+          "Business or Professional Income (ITR-3/4)",
+          "Capital Gains (Stocks/Mutual Funds)",
+          "Rental Income, Foreign Income",
+          "Balance Sheet & Profit/Loss Preparation",
+          "Support for Advance Tax / TDS Credits",
+          "Help with Notice/Defective Returns",
+          "GST + ITR Combo Discounts available",
+        ],
+      },
+      {
+        title: "Advanced Plan",
+        desc: "Capital gains, multiple incomes, stock trading",
+        price: 2499,
+        billingBy: "Billed on request",
+        features: [
+          "GST inclusive",
+          "No hidden fees",
+          " Discounts for returning clients",
+        ],
+      },
+      {
+        title: "NRI Plan",
+        desc: "Income earned in India by NRIs",
+        price: 2999,
+        billingBy: "Billed on request",
+        features: [
+          "GST inclusive",
+          "No hidden fees",
+          " Discounts for returning clients",
+        ],
+      },
+      {
+        title: "CA Assistance",
+        desc: "Personalized consultation + return filing",
+        price: 4999,
+        billingBy: "Billed on request",
+        features: [
+          "GST inclusive",
+          "No hidden fees",
+          " Discounts for returning clients",
+        ],
+      },
+    ],
+  },
 ];
 
 // Make sure getServiceImages is defined or imported before this usage
@@ -360,7 +753,7 @@ export const ServiceData: Services[] = [
     serviceType: ServiceType.UDYAM,
     data: {
       main: {
-        title: "Udyam Registration (MSME Certificate)",
+        title: "Fast & Easy Udyam Registration Online",
         subtitle1: "Start Your Udyam Registration",
         subtitle2:
           "Get your MSME certificate quickly and easily with our expert help!",
@@ -422,16 +815,71 @@ export const ServiceData: Services[] = [
     )[0],
     faqs: ALL_FAQ.filter((faq) => faq.serviceType === ServiceType.FSSAI)[0],
   },
-  // {
-  //     id:3,
-  //     title: "GST Registration",
-  //     description: "GST Registration is required for businesses in India that have a turnover above a certain threshold. It allows businesses to collect and pay Goods and Services Tax (GST) on their sales and purchases.",
-  //     serviceType: ServiceType.GST,},
-  // {
-  //     id:4,
-  //     title: "ITR Filing",
-  //     description: "ITR Filing is the process of submitting income tax returns to the Income Tax Department in India. It is mandatory for individuals and businesses with taxable income. The filing process involves reporting income, deductions, and tax liabilities.",
-  //     serviceType: ServiceType.ITR,}
+  {
+    id: 3,
+    serviceType: ServiceType.GST,
+    data: {
+      main: {
+        title: "Your GST Registration, Our Responsibility",
+        subtitle1:
+          "Let Our Team Handle Your GST Application – Fast, Compliant & Hassle-Free",
+        subtitle2:
+          "Start your business the right way. Apply for GST Registration online with our expert assistance. 100% compliance guaranteed!",
+        images: getServiceImages(
+          ServiceType.GST,
+          serviceImageMap[parseServiceTypeLowerCase(ServiceType.GST)]
+        ),
+      },
+      secondary: {
+        overview: {
+          title: "Service Description – A Quick Overview",
+          desc: htmlContent.filter(
+            (content) => content.serviceType === ServiceType.GST
+          )[0].content,
+        },
+      },
+    },
+    pricings: ALL_Pricing.filter(
+      (pricing) => pricing.serviceType === ServiceType.GST
+    )[0],
+    notifications: [],
+    steps: ALL_Steps.filter(
+      (steps) => steps.serviceType === ServiceType.GST
+    )[0],
+    faqs: ALL_FAQ.filter((faq) => faq.serviceType === ServiceType.GST)[0],
+  },
+  {
+    id: 4,
+    serviceType: ServiceType.ITR,
+    data: {
+      main: {
+        title: "Get Your ITR Filed by Experts",
+        subtitle1: "Let us take the hassle out of taxes.",
+        subtitle2:
+          "Salaried, freelancer, or business owner—we’ve got your tax filing covered, quick and easy.",
+        images: getServiceImages(
+          ServiceType.ITR,
+          serviceImageMap[parseServiceTypeLowerCase(ServiceType.ITR)]
+        ),
+      },
+      secondary: {
+        overview: {
+          title: "ITR Filing – Overview",
+          desc: htmlContent.filter(
+            (content) => content.serviceType === ServiceType.ITR
+          )[0].content,
+        },
+      },
+    },
+    pricings: ALL_Pricing.filter(
+      (pricing) => pricing.serviceType === ServiceType.ITR
+    )[0],
+    notifications: [],
+    steps: ALL_Steps.filter(
+      (steps) => steps.serviceType === ServiceType.ITR
+    )[0],
+    faqs: ALL_FAQ.filter((faq) => faq.serviceType === ServiceType.ITR)[0],
+  },
 ];
 
 export const initialUserContact: UserContact = {

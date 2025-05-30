@@ -15,29 +15,29 @@ const parseServiceTypeUpperCase = (serviceType: string): ServiceType => {
 const getServiceContactTxt = (serviceType: ServiceType): string => {
   switch (serviceType) {
     case ServiceType.UDYAM:
-      return "Contact us for Udyam Registration";
+      return "Need Help with Udyam Registration?";
     case ServiceType.FSSAI:
-      return "Quick & Free FSSAI Guidance";
+      return "Have Questions About FSSAI Registration?";
     case ServiceType.GST:
-      return "Contact us for GST Registration";
+      return "Start Your GST Registration Today!";
     case ServiceType.ITR:
-      return "Contact us for ITR Filing";
+      return "ITR Filing Made Simple – Talk to Us!";
     case ServiceType.MSME:
-      return "Contact us for MSME Registration";
+      return "Quick Support for MSME Registration";
     case ServiceType.TRADEMARK:
-      return "Contact us for Trademark Registration";
+      return "Trademark Queries? We're Here to Help!";
     case ServiceType.ISO:
-      return "Contact us for ISO Certification";
+      return "Get ISO Certified – Contact Now!";
     case ServiceType.IEC:
-      return "Contact us for IEC Registration";
+      return "Need Help with IEC Registration?";
     case ServiceType.TAN:
-      return "Contact us for TAN Registration";
+      return "Confused About TAN? Let’s Talk!";
     case ServiceType.DIN:
-      return "Contact us for DIN Registration";
+      return "DIN Registration Help in One Click";
     case ServiceType.LLP:
-      return "Contact us for LLP Registration";
+      return "LLP Registration Support Made Easy";
     default:
-      return "Contact us for more information";
+      return "Let’s Discuss Your Query";
   }
 };
 

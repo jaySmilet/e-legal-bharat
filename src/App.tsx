@@ -1,16 +1,20 @@
 import "./App.scss";
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Services from "./pages/services/services";
 import NotFound from "./pages/not-found";
 import Layout from "./components/layout";
-import Service from "./pages/services/service";
+import Spinners from "./components/Spinners/spinners";
+
+// Lazy load pages
+const Home = lazy(() => import("./pages/home"));
+const About = lazy(() => import("./pages/about"));
+const Contact = lazy(() => import("./pages/contact"));
+const Services = lazy(() => import("./pages/services/services"));
+const Service = lazy(() => import("./pages/services/service"));
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<Spinners />}>
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<Navigate to="home" replace />} />
@@ -23,7 +27,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 }
 
