@@ -13,7 +13,7 @@ const Home = () => {
     <div className="home d-flex flex-column">
       <div className="top-info position-relative">
         <div className="overlay"></div>
-        <div className="text-content h-100 d-flex p-md-5 p-4">
+        <div className="text-content h-100 d-flex align-items-center p-md-5 p-4">
           <div className="d-flex flex-column gap-md-4 gap-5">
             <div className="d-flex flex-column gap-2">
               <span className="text-light fs-1 fw-semibold">

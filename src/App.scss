@@ -12,7 +12,6 @@
   .text-content {
     position: relative;
     z-index: 2;
-    align-items: center;
   }
 }
 .overlay {
@@ -40,9 +39,6 @@
 @media (max-width: 575.98px) {
   .top-info{
     height: 55vh;
-    .text-content {
-      align-items: flex-start;
-    }
   }
   .profile-man{
     height: 60%; // Smaller min-height for mobile
