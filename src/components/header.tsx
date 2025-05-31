@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <nav
-      className="navbar sticky-top navbar-expand-lg bg-black px-5"
+      className="navbar sticky-top navbar-expand-lg bg-black ps-2"
       data-bs-theme="dark"
     >
       <div className="container-fluid px-0">
@@ -41,7 +41,7 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="offcanvas offcanvas-end w-50 bg-black ms-5"
+          className="offcanvas offcanvas-end w-50 bg-black"
           tabIndex={-1}
           id="offcanvasDarkNavbar"
           aria-labelledby="offcanvasDarkNavbarLabel"
@@ -54,8 +54,8 @@ const Header = () => {
             >
               <img
                 src={`${BASE_IMAGE_PATH}logo/e-legal-bharat-green.png`}
-                className="me-2"
-                style={{ width: "155px" }}
+                className="me-1"
+                style={{ width: "130px" }}
                 alt="e-legal-bharat-logo"
               />
             </h5>

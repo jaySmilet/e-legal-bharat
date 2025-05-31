@@ -8,7 +8,7 @@ const Layout = () => {
     <div className="main container-fluid h-100 d-flex flex-column px-0 no-copy">
       <Connect />
       <Header />
-      <div className="main-content flex-grow-1">
+      <div className="main-content flex-grow-1 overflow-hidden">
         <Outlet />
       </div>
       <div className="footer mt-auto">
