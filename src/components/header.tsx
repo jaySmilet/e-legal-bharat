@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <nav
-      className="navbar sticky-top navbar-expand-lg bg-black ps-2"
+      className="navbar sticky-top navbar-expand-lg bg-black px-md-5 px-4"
       data-bs-theme="dark"
     >
       <div className="container-fluid px-0">

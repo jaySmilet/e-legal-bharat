@@ -14,10 +14,10 @@ const Connect = () => {
           />
         </svg>
         <a
-          href="tel:+916388232984"
+          href="tel:+917408465660"
           className="text-secondary-emphasis text-decoration-none fw-semibold"
         >
-          +91-6388232984
+          +91-7408465660
         </a>
       </small>
       <small className="d-flex align-items-center gap-1 text-secondary-emphasis">
